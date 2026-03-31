@@ -7,7 +7,7 @@ app_name = 'job'
 
 urlpatterns = [
     path('', views.job_list, name='job_list'),
-    path('<int:id>', views.job_detail, name='job_detail'),
+    path('<str:slug>', views.job_detail, name='job_detail'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
