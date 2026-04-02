@@ -16,7 +16,8 @@ def job_list(request):
     page_obj = paginator.get_page(page_number)
     
     # context = {'job_list': job_list}  #Template name
-    context = {'job_list' : page_obj}  #Template name
+    context = {'job_list' : page_obj,
+               'total_jobs_count' : job_list.count()}  #Template name 
     return render(request,'job/job_list.html',context)
 
 
